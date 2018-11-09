@@ -1,0 +1,63 @@
+#%RAML 1.0
+version: v1
+baseUri: https://mocksvc.mulesoft.com/mocks/01481e12-6e0c-4243-8ebd-4a024a16895e # 
+title: Accounts API
+types:
+  Account: !include DataTypes/accounts-data-type.raml
+
+/accounts:
+  get:
+    queryParameters: 
+      type:
+        enum: 
+          - BUSNESS
+          - PERSONAL
+      name:
+      country:
+        type:
+        required: false
+        enum: 
+           - INDIA
+           - AMERICA
+           - FRANCE
+           - ASTRALIA
+           - CHINA
+    responses: 
+      200:
+        body: 
+          application/json:
+            type: Account[]
+            example: !include examples/AccountsExample.raml  
+
+  post:
+    body: 
+      application/json:
+        type: Account
+        example: !include examples/NewAccounts.raml
+    responses: 
+      201:
+        body: 
+          application/json:
+            example:
+              message: Account Added(but not really)
+
+  put:
+    body:
+      application/json:
+        type: Account
+        example: !include examples/AccountsWithNoID.raml
+    responses: 
+      201:
+        body: 
+          application/json:
+            example:
+              message: Accounts Updated(but not really)
+
+  delete:
+    responses: 
+      200:
+        body: 
+          application/json:
+            example:
+              message: account Deleted(but not really)            
+                    

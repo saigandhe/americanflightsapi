@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;apdev-american/src/main/api/american.raml&apos; to &apos;american-flights-api.raml&apos;" description="Rename resource &apos;american.raml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/api/american.raml" name="american-flights-api.raml" stamp="1541662823249" updateReferences="true"/>
+</session>
